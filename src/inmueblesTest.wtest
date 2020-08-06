@@ -3,4 +3,8 @@ test "casa alpina" {
     casaAlp.tipo("casa alpina")
     armado.armar(casaAlp,"blanco")
     // etc.
+    
+    var casaDep = new Inmueble()
+    casaAlp.tipo("departamento")
+    armado.armar(casaDep,"rojo")
 }

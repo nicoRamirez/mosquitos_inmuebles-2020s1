@@ -73,5 +73,26 @@ class MosquitoAguantador inherits MosquitoConVenenoMortal {
 class Estudiante {
     method peso() { return 40 }
 }
+class MosquitoConVenenoSabio inherits MosquitoConVeneno{
+	override method picadorFrecuente(){
+		if(self.superaVeneno()){ 
+			return true
+		}
+		else{
+			super()
+		}
+	}
+	method superaVeneno(){
+		return self.veneno() > 50
+
+	}
+	
+}
+class MosquitoConFiaca inherits Mosquito{
+	override method quierePicar(){
+		return false
+	}
+	
+}
 
 

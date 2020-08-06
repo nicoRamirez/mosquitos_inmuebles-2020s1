@@ -18,7 +18,14 @@ object armado {
             unInmueble.ponerJardin()
             unInmueble.ponerLavadero()
             unInmueble.ponerTechoTejas(300)
+        } else if(unInmueble.tipo() == "departamento"){
+        	unInmueble.ponerAmbientes(3)
+            unInmueble.ponerBalcon()
+            unInmueble.ponerLavadero()
+            unInmueble.ponerBaulera()
+            unInmueble.ponerTechoLoza()
         }
+        
         unInmueble.pintar(unColor)
     }
 }
@@ -48,6 +55,8 @@ class Inmueble {
             return cantidadAmbientes + 1
         } else if (unInmueble.tipo() == "cabania") {
             return 5
+        } else if (unInmueble.tipo() == "departamento"){
+        	return 4
         }
     }
     method ponerPatio(superficie) { 
@@ -66,6 +75,11 @@ class Inmueble {
         const techo = new Caracteristica()
         techo.tipo("techoLoza")
         caracteristicas.add( techo ) 
+    }
+    method ponerBaulera() { 
+        const baulera = new Caracteristica()
+        baulera.tipo("baulera")
+        caracteristicas.add( baulera ) 
     }
     // Así para lavadero, jardín, establo, baulera
 }
